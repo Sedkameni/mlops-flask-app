@@ -2,16 +2,9 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def home():
-    return jsonify({
-        "service": "Sentiment Analysis Service",
-        "status": "running",
-        "endpoints": {
-            "GET /": "Service info",
-            "POST /predict": "Predict sentiment for text"
-        }
-    })
+     return "<h3>MLPops Flask ML Service - Updated</h3>"
 
 @app.route("/predict", methods=["POST"])
 def predict():
